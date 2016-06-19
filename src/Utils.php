@@ -54,7 +54,7 @@ abstract class Utils
         }
 
         if (!isset($json->success) || $json->success !== true) {
-            throw new SteamLoginException('Request did not succeeded');
+            throw new SteamLoginException('Request did not succeed - wrong login data?');
         }
 
         return $json;
