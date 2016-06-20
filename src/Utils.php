@@ -66,7 +66,7 @@ abstract class Utils
      * @param string $delim
      * @param string $string
      *
-     * @return array
+     * @return string[]
      */
     public static function splitByFirst($delim, $string)
     {
