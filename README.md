@@ -7,8 +7,10 @@ If Steam does bigger changes to their login process this library will most likel
 
 Install / Use
 -------------
-`composer require drdelay/steam-login`
+``` bash
+$ composer require drdelay/steam-login
 ```
+``` php
 use DrDelay\SteamLogin\SteamLogin;
 /** @var \GuzzleHttp\Cookie\SetCookie $cookie */
 $cookie = SteamLogin::getSteamLoginSecure('johnny', 'secr3t', 'ABCD3', null, $client);
@@ -17,7 +19,7 @@ $cookie = SteamLogin::getSteamLoginSecure('johnny', 'secr3t', 'ABCD3', null, $cl
 **Note: You should probably cache *steamLoginSecure* or even all the *$client-Cookies* somewhere**
 
 To add a friend for example you could then send:
-```
+``` php
 use DrDelay\SteamLogin\SteamLogin;
 use DrDelay\SteamLogin\Utils as SteamLoginUtils;
 /** @var \GuzzleHttp\Client $client */
@@ -37,4 +39,4 @@ Whether you use the generated GuzzleHttp Client or not is completely up to you. 
 
 License
 ------
-MIT
+The MIT License (MIT). Please see the [License File](LICENSE) for more information.
