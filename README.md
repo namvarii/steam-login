@@ -1,22 +1,27 @@
-# steam-login - Steam Login v1.0.0
+# steam-login - Programmatic Steam login
+
+[![Software License][ico-license]](LICENSE.md)
+
 Performs a login on [steamcommunity.com](https://steamcommunity.com).
 The Steam API offers a lot, but not everything, e.G. the possibility to send friend requests.
 This library has the logic to perform a login on Steam (with the **Javascript RSA-password-encryption** Steam does) and return the content of the *steamLoginSecure* cookie, which is enough to call endpoints like `actions/AddFriendAjax`.
 
 If Steam does bigger changes to their login process this library will most likely break.
 
-Install / Use
--------------
+## Install / Use
+
 ``` bash
 $ composer require drdelay/steam-login
 ```
+
 ``` php
 use DrDelay\SteamLogin\SteamLogin;
 /** @var \GuzzleHttp\Cookie\SetCookie $cookie */
 $cookie = SteamLogin::getSteamLoginSecure('johnny', 'secr3t', 'ABCD3', null, $client);
 /** @var \GuzzleHttp\Client $client */
 ```
-**Note: You should probably cache *steamLoginSecure* or even all the *$client-Cookies* somewhere**
+
+**Note: You should probably cache *steamLoginSecure* or even all the *$client-Cookies* somewhere.**
 
 To add a friend for example you could then send:
 ``` php
@@ -37,6 +42,14 @@ $client->post(SteamLogin::STEAMCOMM_WEBSITE.'/actions/AddFriendAjax', array(
 
 Whether you use the generated GuzzleHttp Client or not is completely up to you. The main purpose of this library is to return the *steamLoginSecure*-Cookie.
 
-License
-------
-The MIT License (MIT). Please see the [License File](LICENSE) for more information.
+## Credits
+
+- [All Contributors][link-contributors]
+
+## License
+
+The MIT License (MIT). Please see the [License File](LICENSE.md) for more information.
+
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+
+[link-contributors]: ../../contributors
