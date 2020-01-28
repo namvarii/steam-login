@@ -13,8 +13,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "guzzlehttp/guzzle": "^6.2",
-        "phpseclib/phpseclib": "^2.0"
+        "guzzlehttp/guzzle": "^6.2"
     },
     "autoload": {
         "psr-4": { "DrDelay\\SteamLogin\\": "src/" }
